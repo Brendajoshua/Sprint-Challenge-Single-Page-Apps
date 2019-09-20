@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Menu() {
     return (
-      <div className='ui attached tabular menu'>
+      <div className='menu-tab'>
         <NavLink exact to='/' className='item'>
           <Icon name='home' />
           Home Page
