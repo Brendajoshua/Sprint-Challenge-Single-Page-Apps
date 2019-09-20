@@ -10,7 +10,7 @@ const CharacterList = () => {
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
-    axios
+    Axios
       .get(`https://rickandmortyapi.com/api/character/?page=${page}`)
       .then(res => {
         // console.log(res.data.info.pages);
