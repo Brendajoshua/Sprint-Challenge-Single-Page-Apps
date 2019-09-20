@@ -5,7 +5,6 @@ const CharacterCard = ({name, location, image, origin}) => {
   <section>
     <header>{name}</header>
     <img src={image} alt={name}/>
-    <p>Location: {location.name}</p>
     <p>origin: {origin.name}</p>
   </section>
   )
