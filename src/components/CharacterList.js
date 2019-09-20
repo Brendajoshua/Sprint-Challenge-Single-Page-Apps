@@ -4,31 +4,33 @@ import CharacterCard from './CharacterCard';
 
 const CharacterList = () => {
   // TODO: Add useState to track data from useEffect
-  const [characters, setCharacters] = useState();
-  const [error, setError] = useState();
+  const [characters, setCharacters] = useState([]);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
-    Axios
-    .get("https://rickandmortyapi.com/api/character/")
-    .then(({data: {results}}) => setCharacters(results))
-    .catch(setError)
-  }, []);
+    axios
+      .get(`https://rickandmortyapi.com/api/character/?page=${page}`)
+      .then(res => {
+        // console.log(res.data.info.pages);
+        setCharacters(res.data.results);
 
-  if (error) {
-    return<div>An error occured!</div>
-  }
-
-  if (!characters) {
-    return <div name="Characters"/>
-  }
+      })
+      .catch(err => console.log(err));
+  }, [page]);
 
   return (
-    <section className="character-list">
-     {characters.map(({id, ...character}) => <CharacterCard key={id} {...character} />)}
-    </section>
-  );
+
+
+    <div className='character-list grid-view'>
+      {characters.map(character => {
+        return <CharacterCard key={character.id} character={character}
+       />;
+      })}
+    </div>
+
+);
 }
 
 export default CharacterList;
