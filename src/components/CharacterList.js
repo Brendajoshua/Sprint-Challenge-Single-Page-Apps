@@ -26,7 +26,9 @@ const CharacterList = () => {
 
   return (
     <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
+     {characters.map(({id, ...character}) => <CharacterCard key={id} {...character} />)}
     </section>
   );
 }
+
+export default CharacterList;
