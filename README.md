@@ -27,7 +27,8 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: Client-side routing prevents the browser from having to fetch each individual page from the server meaning it only has to load the application once.
+When using client-side routing less data is processed, routing between views is generally faster. There is also smooth transitions and animations between, views are easier to implement.
 
 ## Project Set Up
 
